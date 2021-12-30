@@ -5,7 +5,8 @@ with open(path, 'r') as file:
     if action == "sort":
         for line in file:
             for word in line.split():
-                aviv.append(word)
+                if word not in aviv:
+                    aviv.append(word)
         print(sorted(aviv))
     elif action == "rev":
         for line in file:
